@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.story'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper home_wrapper">
+
+        <h1 class="page_title">{{ 'title.story'|trans }}</h1>
+
+        <div class="content_wrapper home_content margin_bottom_4">
+            <h2 class="heading_secondary">{{ 'story.introduction.heading'|trans }}</h2>
+            <p>
+                {{ 'story.introduction.paragraph'|trans }}
+            </p>
+        </div>
+
+        <div class="content_wrapper margin_bottom_4">
+            <h2 class="heading_secondary">{{ 'story.talahm.heading'|trans }}</h2>
+            <p>
+                {{ 'story.talahm.paragraph'|trans }}
+            </p>
+        </div>
+
+        <div class="content_wrapper margin_bottom_4">
+            <h2 class="heading_secondary">{{ 'story.eternal_kingdom.heading'|trans }}</h2>
+            <p>
+                {{ 'story.eternal_kingdom.paragraph'|trans }}
+            </p>
+        </div>
+
+        <div class="content_wrapper margin_bottom_4">
+            <h2 class="heading_secondary">{{ 'story.vagabonds.heading'|trans }}</h2>
+            <p>
+                {{ 'story.vagabonds.paragraph'|trans }}
+            </p>
+        </div>
+
+    </div>
+{% endblock %}

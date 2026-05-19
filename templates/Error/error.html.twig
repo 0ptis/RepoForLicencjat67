@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ status_code }} - {{ 'label.error'|trans|default('Błąd') }}{% endblock %}
+
+{% block body %}
+    <div class="container" style="text-align: center; margin-top: 5rem;">
+        <h1 style="font-size: 6rem; margin-bottom: 0;">{{ status_code }}</h1>
+        <h2 style="margin-bottom: 2rem;">{{ status_text }}</h2>
+
+        <p>
+            {% if status_code == 404 %}
+                {{ 'message.error_404'|trans|default('Przepraszamy, ale strona, której szukasz, nie istnieje.') }}
+            {% elseif status_code == 403 %}
+                {{ 'message.error_403'|trans|default('Nie masz odpowiednich uprawnień, aby przeglądać tę stronę.') }}
+            {% else %}
+                {{ 'message.error_generic'|trans|default('Ups! Wystąpił niespodziewany błąd. Spróbuj ponownie później.') }}
+            {% endif %}
+        </p>
+    </div>
+{% endblock %}

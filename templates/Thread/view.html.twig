@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.thread'|trans }}: {{ thread.title }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper">
+        <h1 class="page_title heading_primary">{{ thread.title }}</h1>
+
+        <div class="author_wrapper author_info margin_bottom_3 flexbox align_center">
+            {% if thread.author.profilePicture is defined and thread.author.profilePicture %}
+                <img src="{{ asset('uploads/profiles/' ~ thread.author.profilePicture) }}" alt="{{ 'alt.avatar'|trans }}" class="profile_img_small">
+            {% else %}
+                <img src="{{ asset('uploads/profiles/DefaultAv.jpg') }}" alt="{{ 'alt.default_avatar'|trans }}" class="profile_img_small">
+            {% endif %}
+            <p class="text_paragraph">
+                <strong class="text_bold">{{ 'label.author'|trans }}:</strong> {{ thread.author.nickname | default('text.unknown'|trans) }}<br>
+                <strong class="text_bold">{{ 'label.created_at'|trans }}:</strong> {{ thread.createdAt|date('Y-m-d H:i:s') }}
+            </p>
+        </div>
+
+        <div class="content_wrapper thread_content padding_3 margin_bottom_4 background_dark text_light border_rounded">
+            {{ thread.content|nl2br }}
+        </div>
+
+        <div class="action_buttons_wrapper margin_top_4">
+        {% if is_granted('THREAD_EDIT', thread) %}
+            <a href="{{ path('thread_edit', {id: thread.id}) }}" class="button button_primary">{{ 'action.edit_thread'|trans }}</a>
+        {% endif %}
+        {% if is_granted('THREAD_DELETE', thread) %}
+            <form action="{{ path('thread_delete', {id: thread.id}) }}" method="post" class="inline_form" onsubmit="return confirm('{{ 'message.confirm_delete_entry'|trans }}');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ thread.id) }}" class="hidden_input">
+                <button type="submit" class="button button_primary">{{ 'action.delete_thread'|trans }}</button>
+            </form>
+        {% endif %}
+        </div>
+
+        <hr class="separator">
+
+        <h2 class="heading_secondary">{{ 'heading.comments'|trans }}</h2>
+
+        {% if thread.comments is not empty %}
+            <ul class="list_wrapper comment_list">
+                {% for comment in thread.comments %}
+                    <li id="comment-{{ comment.id }}" class="list_item comment_item">
+                        <div class="content_wrapper comment_content_wrapper">
+                            <div id="comment-display-{{ comment.id }}" class="comment_display">
+                                <div class="comment_header flexbox align_center margin_bottom_3">
+                                    {% if comment.author.profilePicture is defined and comment.author.profilePicture %}
+                                        <img src="{{ asset('uploads/profiles/' ~ comment.author.profilePicture) }}" alt="{{ 'alt.avatar'|trans }}" class="profile_img_small">
+                                    {% else %}
+                                        <img src="{{ asset('uploads/profiles/DefaultAv.jpg') }}" alt="{{ 'alt.default_avatar'|trans }}" class="profile_img_small">
+                                    {% endif %}
+                                    <div class="text_small text_muted">
+                                        {{ 'label.author'|trans }}: <strong class="text_bold">{{ comment.author.nickname | default('text.unknown'|trans) }}</strong><br>
+                                        {{ 'label.added'|trans }}: {{ comment.createdAt|date('Y-m-d H:i:s') }}
+                                    </div>
+                                </div>
+
+                                <p class="text_paragraph">{{ comment.content|nl2br }}</p>
+
+                                <div class="action_buttons_wrapper comment_actions margin_top_2">
+                                    {% if is_granted('COMMENT_EDIT', comment) %}
+                                        <button type="button" class="button button_secondary" onclick="toggleEditForm({{ comment.id }})">{{ 'action.edit'|trans }}</button>
+                                    {% endif %}
+
+                                    {% if is_granted('COMMENT_DELETE', comment) %}
+                                        <form action="{{ path('comment_delete', {id: comment.id}) }}" method="post" class="inline_form" onsubmit="return confirm('{{ 'message.confirm_delete_comment'|trans }}');">
+                                            <input type="hidden" name="_token" value="{{ csrf_token('delete_comment_' ~ comment.id) }}" class="hidden_input">
+                                            <button type="submit" class="button button_primary">{{ 'action.delete'|trans }}</button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            {% if is_granted('COMMENT_EDIT', comment) %}
+                                <div id="comment-edit-{{ comment.id }}" class="edit_wrapper hidden margin_top_2">
+                                    <form action="{{ path('comment_edit', {id: comment.id}) }}" method="post" class="form_wrapper">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('edit_comment_' ~ comment.id) }}" class="hidden_input">
+                                        <div class="form_group_wrapper">
+                                            <textarea name="content" class="form_input" rows="3" required>{{ comment.content }}</textarea>
+                                        </div>
+                                        <div class="action_buttons_wrapper comment_actions margin_top_2">
+                                            <button type="submit" class="button button_primary">{{ 'action.save_changes'|trans }}</button>
+                                            <button type="button" class="button button_secondary" onclick="toggleEditForm({{ comment.id }})">{{ 'action.cancel'|trans }}</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text_paragraph">{{ 'message.no_comments_in_thread'|trans }}</p>
+        {% endif %}
+
+        <hr class="separator">
+
+        <h3 class="heading_tertiary">{{ 'heading.add_comment'|trans }}</h3>
+
+        {% if app.user %}
+            {{ form_start(comment_form, {'attr': {'class': 'form_wrapper'}}) }}
+            <div class="form_group_wrapper margin_bottom_3">
+                {{ form_row(comment_form.content, {'attr': {'class': 'form_input'}}) }}
+            </div>
+            <button type="submit" class="button button_primary">{{ 'action.add_comment'|trans }}</button>
+            {{ form_end(comment_form) }}
+        {% else %}
+            <p class="text_paragraph">
+                {{ 'message.you_must_be'|trans }} <a href="{{ path('app_login') }}" class="link_item">{{ 'link.logged_in'|trans }}</a>, {{ 'message.to_add_comment'|trans }}
+            </p>
+        {% endif %}
+
+        <div class="action_bar_wrapper margin_top_4">
+            <a href="{{ path('thread_index') }}" class="button button_secondary">{{ 'action.back_to_thread_list'|trans }}</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        function toggleEditForm(commentId) {
+            const displayDiv = document.getElementById('comment-display-' + commentId);
+            const editDiv = document.getElementById('comment-edit-' + commentId);
+            displayDiv.classList.toggle('hidden');
+            editDiv.classList.toggle('hidden');
+        }
+    </script>
+{% endblock %}

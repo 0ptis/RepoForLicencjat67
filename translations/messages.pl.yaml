@@ -1,0 +1,199 @@
+title:
+    Vagabond: 'Włóczęga'
+    play_game: 'Graj'
+    home_page: 'Strona główna'
+    patch_notes: 'Aktualizacje'
+    update_list: 'Lista aktualizacji'
+    login: 'Logowanie'
+    story: 'Fabuła'
+    thread_create: 'Utwórz wątek'
+    thread_delete: 'Usuń wątek'
+    thread_edit: 'Edytuj wątek'
+    thread_list: 'Wątki'
+    thread: 'Wątek'
+    account_blocked: 'Konto zablokowane'
+    user_create: 'Utwórz użytkownika'
+    profile_edit: 'Edycja profilu'
+    user_management: 'Zarządzanie użytkownikami'
+    profile_view: 'Widok profilu'
+    vagrant_world: 'Świat Włóczęgi'
+    add_patch_note: 'Dodaj aktualizację'
+
+nav:
+    item_threads: 'Dyskusje'
+    item_game: 'Graj'
+    item_story: 'Fabuła'
+    item_patch_notes: 'Aktualizacje'
+    item_login: 'Zaloguj'
+    item_logout: 'Wyloguj'
+    item_make_user: 'Stwórz konto'
+    item_moderation: 'Moderacja'
+    item_profile: 'Twoje konto'
+    item_contrast: 'Kontrast'
+
+message:
+    created_successfully: 'Utworzono'
+    edited_successfully: 'Zedytowano'
+    deleted_successfully: 'Usunięto'
+    confirm_delete_entry: 'Czy na pewno chcesz usunąć ten wpis?'
+    no_published_updates: 'Brak opublikowanych aktualizacji.'
+    no_available_updates: 'Brak dostępnych aktualizacji.'
+    confirm_delete_thread: 'Czy na pewno chcesz usunąć ten wątek?'
+    no_threads: 'Brak wątków.'
+    confirm_delete_comment: 'Czy na pewno chcesz usunąć ten komentarz?'
+    no_comments_in_thread: 'Brak komentarzy w tym wątku.'
+    you_must_be: 'Musisz być'
+    to_add_comment: 'aby dodać komentarz.'
+    confirm_block_user: 'Czy na pewno chcesz zablokować tego użytkownika?'
+    no_users_found: 'Nie znaleziono użytkowników.'
+    error_generic: 'Wybacz, nasi wojownicy polegli w boju!'
+    error_404: 'Strona nie została znaleziona.'
+    error_403: 'Dostęp zabroniony.'
+
+heading:
+    updates: 'Aktualizacje'
+    all_updates: 'Wszystkie aktualizacje'
+    login: 'Logowanie'
+    thread_create: 'Utwórz wątek'
+    thread_delete: 'Usuń wątek'
+    thread_edit: 'Edytuj wątek'
+    thread_list: 'Wątki'
+    comments: 'Komentarze'
+    add_comment: 'Dodaj komentarz'
+    access_denied: 'Brak dostępu'
+    user_list: 'Lista użytkowników'
+    add_new_update: 'Dodaj nową aktualizację'
+
+action:
+    add_patch_note: 'Dodaj aktualizację'
+    delete_entry: 'Usuń wpis'
+    filter: 'Filtruj'
+    clear_filters: 'Wyczyść filtry'
+    login: 'Zaloguj się'
+    save: 'Zapisz'
+    back_to_list: 'Powrót do listy'
+    yes_delete: 'Tak, usuń'
+    cancel_and_return: 'Anuluj i wróć'
+    update: 'Zaktualizuj'
+    create_new_thread: 'Utwórz nowy wątek'
+    search: 'Szukaj'
+    clear: 'Wyczyść'
+    show: 'Pokaż'
+    edit: 'Edytuj'
+    delete_thread: 'Usuń wątek'
+    delete: 'Usuń'
+    save_changes: 'Zapisz zmiany'
+    cancel: 'Anuluj'
+    add_comment: 'Dodaj komentarz'
+    back_to_thread_list: 'Powrót do listy wątków'
+    edit_thread: 'Edytuj wątek'
+    logout: 'Wyloguj się'
+    create: 'Utwórz'
+    edit_profile: 'Edytuj profil'
+    unblock: 'Odblokuj'
+    block: 'Zablokuj'
+
+label:
+    search_title_content: 'Szukaj w tytule i treści'
+    sorting: 'Sortowanie'
+    update: 'Aktualizacja'
+    added: 'Dodano'
+    email: 'E-mail'
+    password: 'Hasło'
+    title: 'Tytuł'
+    content: 'Treść'
+    author: 'Autor'
+    created_at: 'Utworzono'
+    actions: 'Akcje'
+    create_new_user: 'Utwórz nowego użytkownika'
+    edit_profile: 'Edytuj profil'
+    current_profile_picture: 'Obecne zdjęcie profilowe'
+    change_password: 'Zmień hasło'
+    id: 'ID'
+    status: 'Status'
+    user_profile: 'Profil użytkownika'
+    error: 'Błąd'
+    nickname: 'Pseudonim'
+
+placeholder:
+    type_keyword: 'Wpisz słowo kluczowe'
+    search: 'Szukaj'
+    search_by_email: 'Szukaj po pseudonimie'
+
+option:
+    sort_desc: 'Od najnowszych'
+    sort_asc: 'Od najstarszych'
+
+text:
+    no_title: 'Brak tytułu'
+    no_date: 'Brak daty'
+    no_content: 'Brak treści'
+    unknown: 'Nieznany'
+    its_you: 'Ty'
+
+alt:
+    main_photo: 'Zdjęcie główne'
+    avatar: 'Awatar'
+    default_avatar: 'Domyślny awatar'
+    current_picture: 'Obecne zdjęcie'
+
+badge:
+    blocked: 'Zablokowany'
+    admin: 'Admin'
+    active: 'Aktywny'
+
+link:
+    logged_in: 'zalogowany(a)'
+
+patch_notes:
+    label:
+        title: 'Tytuł aktualizacji'
+        content: 'Treść aktualizacji'
+    placeholder:
+        title: 'Wpisz tytuł'
+        content: 'Wpisz treść'
+    error:
+        title_empty: 'Tytuł nie może być pusty.'
+        content_empty: 'Treść nie może być pusta.'
+
+form:
+    email: 'Adres e-mail'
+    nickname: 'Pseudonim'
+    profile_picture: 'Zdjęcie profilowe'
+    password:
+        new: 'Nowe hasło'
+        repeat: 'Powtórz hasło'
+        required: 'Hasło jest wymagane.'
+    please:
+        appropriate:
+            image: 'Proszę wgrać odpowiedni plik graficzny (maksymalnie 2MB).'
+
+'Witaj!': 'Witaj!'
+
+story:
+    introduction:
+        heading: 'Wprowadzenie'
+        paragraph: 'Kraina Talahm została spowita niepokojem – wieść o tym wstrząsnęła całą ludnością Wiecznego Królestwa: potężny magiczny relikt został skradziony. Jego prawdziwa potęga znana jest tylko nadwornym naukowcom, którzy przeprowadzali na nim liczne eksperymenty. Król rozporządził natychmiast, aby rozpoczęto poszukiwania oraz zatrzymano wszystkie osoby powiązane z tym zdarzeniem. W celu usprawnienia poszukiwań wyprawieni zostali Włóczędzy, czyli rycerze szkoleni w tajemnych sztukach magii bitewnej, przystosowani do infiltracji, tropienia i przede wszystkim – skutecznej, samodzielnej pracy. Wciel się w jednego z nich, aby udać się na poszukiwanie zagubionego reliktu! Przemierzaj magiczne krainy Talahm, odkrywając nowe rejony, a zarazem niosąc sławę Wiecznemu Królestwu. W trakcie wyprawy poznasz:'
+    talahm:
+        heading: 'O Talahm'
+        paragraph: 'Kraina słynąca z dobrobytu gospodarczego od zarania dziejów należy do Wiecznego Królestwa. Jej wyjątkowa natura dała początek magii, jaka znana jest powszechnie, choć praktykowana przez niewielu. Przez ten fakt nastąpiło tu zróżnicowanie otoczenia – obszary takie jak Pola Obfitości, Zgniły Las, Góry Grozy czy też mityczne Jaskinie Nocy zostały starannie spisane w dokumentach królestwa i przeniesione na mapy. Naturalnie zróżnicowanie flory i fauny przyczynia się też do powstawania nowych gatunków stworzeń – zarówno tych plugawych, niczym Aspekty Zgnilizny, jak i bardziej urokliwych, jak Dzikie Ważkowce.'
+    eternal_kingdom:
+        heading: 'O Wiecznym Królestwie'
+        paragraph: 'W rzeczywistości nikt nie jest pewien, kiedy faktycznie powstało, lecz jedno jest pewne – zdecydowanie nigdy nie przeminie. Rządzone przez królów, którzy wybierani są zgodnie z głosem ludu, wciąż prosperuje. Jego technologia została oparta na magicznej energii pozyskiwanej przez tajne techniki nadwornych naukowców. To dzięki niej każdy mieszkaniec może cieszyć się między innymi oświetleniem w domach. Krążą pogłoski, że to właśnie skradziony relikt jest jedną z maszyn odpowiedzialnych za konwertowanie jej w moc zasilającą całe królestwo. Jeśli okażą się one prawdą, może to znacząco zaszkodzić opinii o bezpieczeństwie na jego obszarze.'
+    vagabonds:
+        heading: 'O Włóczęgach'
+        paragraph: 'Aby dogłębnie poznać i okiełznać chaotyczną naturę magii Talahm, potrzeba wielu lat praktyki. Dlatego członkowie zakonu Włóczęgów, którego nazwa wywodzi się z podróżniczego trybu życia jego braci, rozpoczynają ją od najmłodszych lat. Opracowanie skutecznych metod obchodzenia się z tak dewastującą mocą nie było łatwe, ale z czasem zaczęto czynić znaczące postępy w jej zrozumieniu. Pierwotnie używana do podtrzymywania pokoju, została przekształcona w sztukę bitewną z powodu licznych konfliktów z sąsiadującymi nacjami. Zakon Włóczęgów zmienił się w królewskie oddziały specjalne – podczas wojny z Imperium Kaata odegrał on kluczową rolę w infiltracji oraz destabilizacji wroga. Obecnie doktryna zakonu uległa zmianie. Dalej odprawiają oni wyprawy, lecz są one najczęściej powiązane z misjami nadawanymi przez samego Króla.'
+
+validators:
+    email:
+        already_used: 'Ten adres e-mail jest już w użyciu.'
+    patch_notes:
+        error:
+            title_empty: 'Tytuł nie może być pusty.'
+            content_empty: 'Treść nie może być pusta.'
+    form:
+        password:
+            required: 'Hasło jest wymagane.'
+        please:
+            appropriate:
+                image: 'Proszę wgrać odpowiedni plik graficzny (maksymalnie 2MB).'

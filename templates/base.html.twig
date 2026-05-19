@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ 'Witaj!'|trans }}{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('games/wloczyga/TemplateData/style.css') }}">
+    {% endblock %}
+
+    {% block javascripts %}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
+        <script>
+            (() => {
+                const initializeFeatures = () => {
+                    const toggleBtn = document.getElementById('theme-toggle');
+                    const body = document.body;
+
+                    if (toggleBtn && !toggleBtn.dataset.initialized) {
+                        toggleBtn.dataset.initialized = 'true';
+                        toggleBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            body.classList.toggle('high-contrast');
+
+                            if (body.classList.contains('high-contrast')) {
+                                localStorage.setItem('theme', 'high-contrast');
+                            } else {
+                                localStorage.setItem('theme', 'default');
+                            }
+                        });
+                    }
+
+                    const fontDecreaseBtn = document.getElementById('font-decrease');
+                    const fontResetBtn = document.getElementById('font-reset');
+                    const fontIncreaseBtn = document.getElementById('font-increase');
+
+                    if (fontDecreaseBtn && !fontDecreaseBtn.dataset.initialized) {
+                        fontDecreaseBtn.dataset.initialized = 'true';
+                        fontDecreaseBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            let currentSize = parseInt(window.getComputedStyle(document.documentElement).fontSize) || 16;
+                            let newSize = currentSize - 3;
+                            document.documentElement.style.fontSize = newSize + 'px';
+                            localStorage.setItem('fontSize', newSize);
+                        });
+                    }
+
+                    if (fontResetBtn && !fontResetBtn.dataset.initialized) {
+                        fontResetBtn.dataset.initialized = 'true';
+                        fontResetBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            document.documentElement.style.fontSize = '';
+                            localStorage.removeItem('fontSize');
+                        });
+                    }
+
+                    if (fontIncreaseBtn && !fontIncreaseBtn.dataset.initialized) {
+                        fontIncreaseBtn.dataset.initialized = 'true';
+                        fontIncreaseBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            let currentSize = parseInt(window.getComputedStyle(document.documentElement).fontSize) || 16;
+                            let newSize = currentSize + 3;
+                            document.documentElement.style.fontSize = newSize + 'px';
+                            localStorage.setItem('fontSize', newSize);
+                        });
+                    }
+
+                    const mainHamburgerBtn = document.getElementById('main-hamburger');
+                    const navItemsWrapper = document.getElementById('nav-items-wrapper');
+
+                    if (mainHamburgerBtn && navItemsWrapper && !mainHamburgerBtn.dataset.initialized) {
+                        mainHamburgerBtn.dataset.initialized = 'true';
+                        mainHamburgerBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            navItemsWrapper.classList.toggle('show_mobile');
+                            const isExpanded = navItemsWrapper.classList.contains('show_mobile');
+                            mainHamburgerBtn.setAttribute('aria-expanded', isExpanded);
+                        });
+                    }
+
+                    const hamburgerBtn = document.getElementById('accessibility-hamburger');
+                    const dropdownMenu = document.getElementById('accessibility-dropdown');
+
+                    if (hamburgerBtn && dropdownMenu && !hamburgerBtn.dataset.initialized) {
+                        hamburgerBtn.dataset.initialized = 'true';
+                        hamburgerBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            dropdownMenu.classList.toggle('show');
+                            const isExpanded = dropdownMenu.classList.contains('show');
+                            hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+                        });
+                    }
+
+                    if (!document.body.dataset.clickListenerAttached) {
+                        document.body.dataset.clickListenerAttached = 'true';
+                        document.addEventListener('click', (e) => {
+                            const accBtn = document.getElementById('accessibility-hamburger');
+                            const accMenu = document.getElementById('accessibility-dropdown');
+                            const mainBtn = document.getElementById('main-hamburger');
+                            const mainMenu = document.getElementById('nav-items-wrapper');
+
+                            if (accBtn && accMenu && !accBtn.contains(e.target) && !accMenu.contains(e.target)) {
+                                accMenu.classList.remove('show');
+                                if (accBtn.hasAttribute('aria-expanded')) {
+                                    accBtn.setAttribute('aria-expanded', 'false');
+                                }
+                            }
+
+                            if (mainBtn && mainMenu && !mainBtn.contains(e.target) && !mainMenu.contains(e.target)) {
+                                mainMenu.classList.remove('show_mobile');
+                                if (mainBtn.hasAttribute('aria-expanded')) {
+                                    mainBtn.setAttribute('aria-expanded', 'false');
+                                }
+                            }
+                        });
+                    }
+                };
+                document.addEventListener('turbo:load', initializeFeatures);
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initializeFeatures);
+                } else {
+                    initializeFeatures();
+                }
+            })();
+            if (localStorage.getItem('theme') === 'high-contrast') {
+                document.body.classList.add('high-contrast');
+            }
+            if (localStorage.getItem('fontSize')) {
+                document.documentElement.style.fontSize = localStorage.getItem('fontSize') + 'px';
+            }
+        </script>
+    {% endblock %}
+
+    {% set frankenphpHotReload = app.request.server.get('FRANKENPHP_HOT_RELOAD') %}
+    {% if frankenphpHotReload %}
+        <meta name="frankenphp-hot-reload:url" content="{{ frankenphpHotReload }}">
+        <script src="https://cdn.jsdelivr.net/npm/idiomorph"></script>
+        <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
+    {% endif %}
+</head>
+<body>
+<nav class="nav">
+    <div class="nav_name">
+        <a href="{{ url('home_index') }}"><h1>{{ 'title.Vagabond'|trans }}</h1></a>
+    </div>
+
+    <button id="main-hamburger" class="nav_button hamburger_btn hidden_desktop" aria-expanded="false">
+        ☰
+    </button>
+
+    <div id="nav-items-wrapper" class="nav_items">
+        <a class="nav_item nav_button" href="{{ url('thread_index') }}">
+            {{ 'nav.item_threads'|trans }}
+        </a>
+
+        {% if is_granted('ROLE_USER') %}
+            <a class="nav_item nav_button" data-turbo="false" href="{{ url('game_index')}}">
+                {{ 'nav.item_game'|trans }}
+            </a>
+        {% endif %}
+
+        <a class="nav_item nav_button" href="{{ url('story_index') }}">
+            {{ 'nav.item_story'|trans }}
+        </a>
+
+        <a class="nav_item nav_button" href="{{ url('patch_notes_view') }}">
+            {{ 'nav.item_patch_notes'|trans }}
+        </a>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="nav_item nav_button" href="{{ url('admin_user_index') }}">
+                {{ 'nav.item_moderation'|trans }}
+            </a>
+        {% endif %}
+
+        {% if app.user %}
+            <a class="nav_item nav_button" href="{{ url('user_view') }}">
+                {{ 'nav.item_profile'|trans }}
+            </a>
+            <a class="nav_item nav_button" href="{{ url('app_logout') }}">
+                {{ 'nav.item_logout'|trans }}
+            </a>
+        {% else %}
+            <a class="nav_item nav_button" href="{{ url('app_login') }}">
+                {{ 'nav.item_login'|trans }}
+            </a>
+            <a class="nav_item nav_button" href="{{ url('user_create') }}">
+                {{ 'nav.item_make_user'|trans }}
+            </a>
+        {% endif %}
+
+        {% set current_route = app.request.attributes.get('_route') %}
+        {% set current_params = app.request.attributes.get('_route_params')|default({}) %}
+
+        <div class="nav_item accessibility_container">
+            <button id="accessibility-hamburger" class="nav_button hamburger_btn" aria-expanded="false">
+                ☰
+            </button>
+            <div id="accessibility-dropdown" class="accessibility_dropdown">
+                <div class="language dropdown_item">
+                    {% if app.request.locale != 'pl' %}
+                        <a class="nav_button" href="{{ path(current_route|default('home_index'), current_params|merge({'_locale': 'pl'})) }}">PL</a>
+                    {% endif %}
+                    {% if app.request.locale != 'en' %}
+                        <a class="nav_button" href="{{ path(current_route|default('home_index'), current_params|merge({'_locale': 'en'})) }}">EN</a>
+                    {% endif %}
+                </div>
+                <a href="#" id="font-decrease" class="nav_button dropdown_item">A-</a>
+                <a href="#" id="font-reset" class="nav_button dropdown_item">A</a>
+                <a href="#" id="font-increase" class="nav_button dropdown_item">A+</a>
+                <a href="#" id="theme-toggle" class="nav_button dropdown_item">
+                    ◑
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<main class="main_content">
+    {% if app.request.attributes.get('_route') != 'home_index' and app.request.pathinfo != '/home' %}
+    <div class="container flash_messages_wrapper">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% block body %}
+
+    {% endblock %}
+</main>
+<footer>
+    <div class="footer">
+        {{ 'Autorem niniejszego serwisu jest Filip Kwatera Serwis ten stanowi integralną część pracy licencjackiej (kierunek: elektroniczne przetwarzanie informacji), przygotowanej pod kierunkiem Dr Michaliny Lubaszewskiej na Wydziale Zarządzania i Komunikacji Społecznej Uniwersytetu Jagiellońskiego.'|trans }}
+    </div>
+</footer>
+</body>
+</html>

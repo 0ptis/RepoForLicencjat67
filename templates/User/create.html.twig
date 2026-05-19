@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.user_create'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper">
+        <h1 class="page_title heading_primary">{{ 'label.create_new_user'|trans }}</h1>
+
+        {{ form_start(form, {'attr': {'class': 'form_wrapper'}}) }}
+
+        <div style="color: var(--color-interaction); margin-bottom: 15px; font-weight: bold;">
+            {{ form_errors(form) }}
+            {{ form_errors(form.email) }}
+            {{ form_errors(form.nickname) }}
+        </div>
+
+        <div class="form_group_wrapper margin_bottom_3">
+            {{ form_row(form.email, {'attr': {'class': 'form_input'}}) }}
+        </div>
+
+        <div class="form_group_wrapper margin_bottom_3">
+            {{ form_row(form.nickname, {'attr': {'class': 'form_input'}}) }}
+        </div>
+
+        <div class="form_group_wrapper margin_bottom_3">
+            {{ form_row(form.profilePicture, {'attr': {'class': 'form_input'}}) }}
+        </div>
+
+        <div class="form_group_wrapper margin_bottom_3">
+            {{ form_row(form.plainPassword, {'attr': {'class': 'form_input'}}) }}
+        </div>
+
+        <div class="action_buttons_wrapper margin_top_3">
+            <button type="submit" class="button button_primary">
+                {{ 'action.create'|trans }}
+            </button>
+            <a href="{{ path('home_index') }}" class="button button_secondary">
+                {{ 'action.back_to_list'|trans }}
+            </a>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.profile_view'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper">
+        <h1 class="page_title heading_primary text_center">{{ 'label.user_profile'|trans }}</h1>
+
+        <div class="content_wrapper profile_container text_center">
+            <div class="avatar_wrapper profile_image margin_bottom_3">
+                {% if user.profilePicture %}
+                    <img src="{{ asset('uploads/profiles/' ~ user.profilePicture) }}" alt="{{ user.nickname }}" class="profile_img_large">
+                {% else %}
+                    <img src="{{ asset('uploads/profiles/DefaultAv.jpg') }}" alt="{{ 'alt.default_avatar'|trans }}" class="profile_img_large">
+                {% endif %}
+            </div>
+
+            <div class="info_wrapper profile_info margin_bottom_4">
+                <p class="text_paragraph"><strong class="text_bold">{{ 'label.nickname'|trans }}:</strong> {{ user.nickname }}</p>
+                <p class="text_paragraph"><strong class="text_bold">{{ 'label.email'|trans }}:</strong> {{ user.email }}</p>
+            </div>
+
+            <div class="action_buttons_wrapper">
+                <a href="{{ path('user_edit') }}" class="button button_primary">
+                    {{ 'action.edit_profile'|trans }}
+                </a>
+                <a href="{{ path('home_index') }}" class="button button_secondary">
+                    {{ 'action.back_to_list'|trans }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

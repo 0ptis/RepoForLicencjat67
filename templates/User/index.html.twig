@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.user_management'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper margin_top_4">
+        <h1 class="page_title heading_primary">{{ 'heading.user_list'|trans }}</h1>
+
+        <form method="get" action="{{ path('admin_user_index') }}" class="form_wrapper search_form margin_bottom_4 d_flex">
+            <input type="text" name="q" class="form_input margin_right_2" placeholder="{{ 'placeholder.search_by_email'|trans }}" value="{{ searchQuery }}">
+            <button type="submit" class="button button_primary">{{ 'action.search'|trans }}</button>
+            {% if searchQuery %}
+                <a href="{{ path('admin_user_index') }}" class="button button_secondary margin_left_2">{{ 'action.clear'|trans }}</a>
+            {% endif %}
+        </form>
+
+        <div class="table_wrapper">
+            <table class="table_element table_striped">
+                <thead class="table_head">
+                <tr class="table_row">
+                    <th class="table_header"></th>
+                    <th class="table_header">{{ 'label.nickname'|trans }}</th>
+                    <th class="table_header">{{ 'label.email'|trans }}</th>
+                    <th class="table_header">{{ 'label.status'|trans }}</th>
+                    <th class="table_header">{{ 'label.actions'|trans }}</th>
+                </tr>
+                </thead>
+                <tbody class="table_body">
+                {% for user in users %}
+                    <tr class="table_row">
+                        <td class="table_cell">
+                            {% if user.profilePicture %}
+                                <img src="{{ asset('uploads/profiles/' ~ user.profilePicture) }}" alt="{{ user.nickname }}" class="profile_img_small">
+                            {% else %}
+                                <span>-</span>
+                            {% endif %}
+                        </td>
+                        <td class="table_cell">{{ user.nickname }}</td>
+                        <td class="table_cell">{{ user.email }}</td>
+                        <td class="table_cell">
+                            {% if 'ROLE_BLOCKED' in user.roles %}
+                                <span class="badge_status badge_danger">{{ 'badge.blocked'|trans }}</span>
+                            {% elseif 'ROLE_ADMIN' in user.roles %}
+                                <span class="badge_status badge_primary">{{ 'badge.admin'|trans }}</span>
+                            {% else %}
+                                <span class="badge_status badge_success">{{ 'badge.active'|trans }}</span>
+                            {% endif %}
+                        </td>
+                        <td class="table_cell">
+                            {% if user.id == app.user.id %}
+                                <span class="text_span text_muted">{{ 'text.its_you'|trans }}</span>
+                            {% elseif 'ROLE_ADMIN' in user.roles %}
+                                <span class="text_span text_muted">{{ 'badge.admin'|trans }}</span>
+                            {% else %}
+                                <form method="post" action="{{ path('admin_user_toggle_block', {'id': user.id}) }}" class="form_wrapper inline_form">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('toggle_block_' ~ user.id) }}" class="hidden_input">
+                                    {% if 'ROLE_BLOCKED' in user.roles %}
+                                        <button type="submit" class="button button_primary">{{ 'action.unblock'|trans }}</button>
+                                    {% else %}
+                                        <button type="submit" class="button button_primary" onclick="return confirm('{{ 'message.confirm_block_user'|trans }}');">{{ 'action.block'|trans }}</button>
+                                    {% endif %}
+                                </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr class="table_row">
+                        <td colspan="5" class="table_cell text_center">{{ 'message.no_users_found'|trans }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

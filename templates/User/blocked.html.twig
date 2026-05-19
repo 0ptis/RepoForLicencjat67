@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.account_blocked'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper text_center margin_top_5">
+        <h1 class="page_title heading_primary text_danger">{{ 'heading.access_denied'|trans }}</h1>
+        <a href="{{ path('app_logout') }}" class="button button_secondary margin_top_3">{{ 'action.logout'|trans }}</a>
+    </div>
+{% endblock %}

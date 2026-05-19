@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.login'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper center_container">
+        <div class="form_container login_box">
+            <h2 class="page_title">{{ 'heading.login'|trans }}</h2>
+
+            {% if error %}
+                <div class="alert_wrapper alert_danger">
+                    <span class="alert_text">{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+                </div>
+            {% endif %}
+
+            <form method="post" action="{{ path('app_login') }}" class="form_wrapper">
+                <div class="form_group_wrapper">
+                <label for="inputEmail" class="form_label">{{ 'label.email'|trans }}</label>
+                <input type="email" id="inputEmail" name="_username" class="form_input" value="{{ last_username }}" required autofocus>
+                </div>
+
+                <div class="form_group_wrapper margin_top_3">
+                    <label for="inputPassword" class="form_label">{{ 'label.password'|trans }}</label>
+                    <input type="password" id="inputPassword" name="_password" class="form_input" required>
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" class="hidden_input">
+
+                <div class="action_buttons_wrapper margin_top_4">
+                    <button class="button button_primary" type="submit">{{ 'action.login'|trans }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

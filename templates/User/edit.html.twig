@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.profile_edit'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper">
+        <h1 class="page_title heading_primary">{{ 'label.edit_profile'|trans }}</h1>
+
+        {{ form_start(form, {'attr': {'class': 'form_wrapper'}}) }}
+
+        <div class="form_group_wrapper margin_bottom_3">
+            {{ form_row(form.email, {'attr': {'class': 'form_input', 'readonly': true}}) }}
+        </div>
+
+        <div class="form_group_wrapper margin_bottom_3">
+            {{ form_row(form.nickname, {'attr': {'class': 'form_input'}}) }}
+        </div>
+
+        <div class="form_group_wrapper margin_bottom_3">
+            <label class="form_label">{{ 'label.current_profile_picture'|trans }}</label>
+            <div class="image_container_wrapper margin_bottom_3">
+                {% if app.user.profilePicture %}
+                    <img src="{{ asset('uploads/profiles/' ~ app.user.profilePicture) }}" alt="{{ 'alt.current_picture'|trans }}" class="profile_img_medium">
+                {% endif %}
+            </div>
+            {{ form_row(form.profilePicture, {'attr': {'class': 'form_input'}}) }}
+        </div>
+        <div class="form_group_wrapper margin_bottom_3">
+            <h2 class="heading_secondary">{{ 'label.change_password'|trans }}</h2>
+            {{ form_row(form.plainPassword, {'attr': {'class': 'form_input'}}) }}
+        </div>
+
+        <div class="action_buttons_wrapper margin_top_3">
+            <button type="submit" class="button button_primary">
+                {{ 'action.save'|trans }}
+            </button>
+            <a href="{{ path('home_index') }}" class="button button_secondary">
+                {{ 'action.cancel'|trans }}
+            </a>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

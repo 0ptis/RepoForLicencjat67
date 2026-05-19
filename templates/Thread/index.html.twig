@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.thread_list'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper">
+        <h1 class="page_title heading_primary">{{ 'heading.thread_list'|trans }}</h1>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert_wrapper alert_success">
+                <span class="alert_text">{{ message|trans }}</span>
+            </div>
+        {% endfor %}
+
+        {% if is_granted('ROLE_USER') %}
+            <div class="action_bar_wrapper margin_bottom_3">
+                <a href="{{ path('thread_create') }}" class="button button_primary">{{ 'action.create_new_thread'|trans }}</a>
+            </div>
+        {% endif %}
+
+        <div class="filter_wrapper margin_bottom_4">
+            <form method="get" action="{{ path('thread_index') }}" class="form_wrapper d_flex">
+                <input type="text" name="search" class="form_input margin_right_2" placeholder="{{ 'placeholder.search'|trans }}" value="{{ filters.search }}">
+                <button type="submit" class="button button_primary">{{ 'action.search'|trans }}</button>
+                {% if filters.search %}
+                    <a href="{{ path('thread_index') }}" class="button button_secondary margin_left_2">{{ 'action.clear'|trans }}</a>
+                {% endif %}
+            </form>
+        </div>
+        <div class="margin_bottom_3">
+
+        </div>
+        <div class="pagination_container_wrapper">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+        <div class="table_wrapper">
+            <table class="table_element table_striped">
+                <thead class="table_head">
+                <tr class="table_row">
+                    <th class="table_header">{{ 'label.title'|trans }}</th>
+                    <th class="table_header">{{ 'label.author'|trans }}</th>
+                    <th class="table_header">{{ 'label.created_at'|trans }}</th>
+                    <th class="table_header">{{ 'label.actions'|trans }}</th>
+                </tr>
+                </thead>
+                <tbody class="table_body">
+                {% for thread in pagination %}
+                    <tr class="table_row">
+                        <td class="table_cell">{{ thread.title }}</td>
+                        <td class="table_cell">
+                            <div class="author_wrapper author_info">
+                                {% if thread.author.profilePicture is defined and thread.author.profilePicture %}
+                                    <img src="{{ asset('uploads/profiles/' ~ thread.author.profilePicture) }}" alt="{{ 'alt.avatar'|trans }}" class="profile_img_small">
+                                {% else %}
+                                    <img src="{{ asset('uploads/profiles/DefaultAv.jpg') }}" alt="{{ 'alt.default_avatar'|trans }}" class="profile_img_small">
+                                {% endif %}
+                                <span class="text_span">{{ thread.author.nickname | default('text.unknown'|trans) }}</span>
+                            </div>
+                        </td>
+                        <td class="table_cell">{{ thread.createdAt|date('Y-m-d H:i:s') }}</td>
+                        <td class="table_cell">
+                            <a href="{{ path('thread_view', {id: thread.id}) }}" class="button button_primary">{{ 'action.show'|trans }}</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr class="table_row">
+                        <td colspan="4" class="table_cell text_center">{{ 'message.no_threads'|trans }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination_container_wrapper">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

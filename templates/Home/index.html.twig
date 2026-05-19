@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.home_page'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="slideshow_container">
+        <img src="{{ asset('AssetPhotos/VagabondMainPage1.png') }}" alt="{{ 'alt.main_photo'|trans }}" class="slide_img active">
+        <img src="{{ asset('AssetPhotos/VagabondMainPage4.png') }}" alt="{{ 'alt.main_photo'|trans }}" class="slide_img">
+        <img src="{{ asset('AssetPhotos/VagabondMainPage2.png') }}" alt="{{ 'alt.main_photo'|trans }}" class="slide_img">
+        <img src="{{ asset('AssetPhotos/VagabondMainPage3.png') }}" alt="{{ 'alt.main_photo'|trans }}" class="slide_img">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide_img');
+            let currentSlide = 0;
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            if (slides.length > 0) {
+                setTimeout(nextSlide, 50);
+                setInterval(nextSlide, 8000);
+            }
+        });
+    </script>
+{% endblock %}

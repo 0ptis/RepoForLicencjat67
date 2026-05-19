@@ -1,0 +1,199 @@
+title:
+    Vagabond: 'Vagabond'
+    play_game: 'Play'
+    home_page: 'Home Page'
+    patch_notes: 'Patch Notes'
+    update_list: 'Update List'
+    login: 'Login'
+    story: 'Story'
+    thread_create: 'Create Thread'
+    thread_delete: 'Delete Thread'
+    thread_edit: 'Edit Thread'
+    thread_list: 'Threads'
+    thread: 'Thread'
+    account_blocked: 'Account Blocked'
+    user_create: 'Create User'
+    profile_edit: 'Edit Profile'
+    user_management: 'User Management'
+    profile_view: 'Profile View'
+    vagrant_world: 'Vagrant World'
+    add_patch_note: 'Add Patch Note'
+
+nav:
+    item_threads: 'Threads'
+    item_game: 'Play'
+    item_story: 'Story'
+    item_patch_notes: 'Patch notes'
+    item_login: 'Login'
+    item_logout: 'Logout'
+    item_make_user: 'Create account'
+    item_moderation: 'Moderation'
+    item_profile: 'Your account'
+    item_contrast: 'Contrast'
+
+message:
+    created_successfully: 'Created successfully.'
+    edited_successfully: 'Edited successfully.'
+    deleted_successfully: 'Deleted successfully.'
+    confirm_delete_entry: 'Are you sure you want to delete this entry?'
+    no_published_updates: 'No published updates.'
+    no_available_updates: 'No updates available.'
+    confirm_delete_thread: 'Are you sure you want to delete this thread?'
+    no_threads: 'No threads found.'
+    confirm_delete_comment: 'Are you sure you want to delete this comment?'
+    no_comments_in_thread: 'No comments in this thread.'
+    you_must_be: 'You must be'
+    to_add_comment: 'to add a comment.'
+    confirm_block_user: 'Are you sure you want to block this user?'
+    no_users_found: 'No users found.'
+    error_404: 'Page not found.'
+    error_403: 'Access denied.'
+    error_generic: 'Our soliders have fallen in battle, sorry.'
+
+heading:
+    updates: 'Updates'
+    all_updates: 'All Updates'
+    login: 'Login'
+    thread_create: 'Create Thread'
+    thread_delete: 'Delete Thread'
+    thread_edit: 'Edit Thread'
+    thread_list: 'Threads'
+    comments: 'Comments'
+    add_comment: 'Add Comment'
+    access_denied: 'Access Denied'
+    user_list: 'User List'
+    add_new_update: 'Add New Update'
+
+action:
+    add_patch_note: 'Add Patch Note'
+    delete_entry: 'Delete Entry'
+    filter: 'Filter'
+    clear_filters: 'Clear Filters'
+    login: 'Log In'
+    save: 'Save'
+    back_to_list: 'Back to List'
+    yes_delete: 'Yes, delete'
+    cancel_and_return: 'Cancel and Return'
+    update: 'Update'
+    create_new_thread: 'Create New Thread'
+    search: 'Search'
+    clear: 'Clear'
+    show: 'Show'
+    edit: 'Edit'
+    delete_thread: 'Delete Thread'
+    delete: 'Delete'
+    save_changes: 'Save Changes'
+    cancel: 'Cancel'
+    add_comment: 'Add Comment'
+    back_to_thread_list: 'Back to Threads'
+    edit_thread: 'Edit Thread'
+    logout: 'Log Out'
+    create: 'Create'
+    edit_profile: 'Edit Profile'
+    unblock: 'Unblock'
+    block: 'Block'
+
+label:
+    search_title_content: 'Search in title and content'
+    sorting: 'Sorting'
+    update: 'Update'
+    added: 'Added'
+    email: 'Email'
+    password: 'Password'
+    title: 'Title'
+    content: 'Content'
+    author: 'Author'
+    created_at: 'Created at'
+    actions: 'Actions'
+    create_new_user: 'Create New User'
+    edit_profile: 'Edit Profile'
+    current_profile_picture: 'Current Profile Picture'
+    change_password: 'Change Password'
+    id: 'ID'
+    status: 'Status'
+    user_profile: 'User Profile'
+    error: 'Error'
+    nickname: 'Nickname'
+
+placeholder:
+    type_keyword: 'Type keyword'
+    search: 'Search'
+    search_by_email: 'Search by nickname'
+
+option:
+    sort_desc: 'Latest'
+    sort_asc: 'Oldest'
+
+text:
+    no_title: 'No title'
+    no_date: 'No date'
+    no_content: 'No content'
+    unknown: 'Unknown'
+    its_you: "You"
+
+alt:
+    main_photo: 'Main Photo'
+    avatar: 'Avatar'
+    default_avatar: 'Default Avatar'
+    current_picture: 'Current Picture'
+
+badge:
+    blocked: 'Blocked'
+    admin: 'Admin'
+    active: 'Active'
+
+link:
+    logged_in: 'logged in'
+
+patch_notes:
+    label:
+        title: 'Patch Note Title'
+        content: 'Patch Note Content'
+    placeholder:
+        title: 'Enter title'
+        content: 'Enter content'
+    error:
+        title_empty: 'Title cannot be empty.'
+        content_empty: 'Content cannot be empty.'
+
+form:
+    email: 'Email address'
+    nickname: 'Nickname'
+    profile_picture: 'Profile Picture'
+    password:
+        new: 'New Password'
+        repeat: 'Repeat Password'
+        required: 'Password is required.'
+    please:
+        appropriate:
+            image: 'Please upload a valid image file (max 2MB).'
+
+'Witaj!': 'Welcome!'
+
+story:
+    introduction:
+        heading: 'Introduction'
+        paragraph: 'The land of Talahm has been shrouded in unrest—news of it has shaken the entire population of the Eternal Kingdom: a powerful magical relic has been stolen. Its true power is known only to the royal scientists who conducted numerous experiments on it. The King immediately ordered a search to begin and the arrest of all individuals connected to this event. To streamline the search, Vagabonds have been dispatched—knights trained in the arcane arts of battle magic, adapted for infiltration, tracking, and above all, effective independent work. Take on the role of one of them to embark on a quest to find the lost relic! Traverse the magical lands of Talahm, discovering new regions while bringing glory to the Eternal Kingdom. During your journey, you will experience:'
+    talahm:
+        heading: 'About Talahm'
+        paragraph: 'A land renowned for its economic prosperity, it has belonged to the Eternal Kingdom since the dawn of time. Its unique nature gave rise to magic, which is widely known, though practiced by few. This fact has led to a diversification of the environment—areas such as the Fields of Plenty, the Rotting Forest, the Mountains of Dread, or the mythical Caves of the Night have been carefully documented in the kingdom''s records and mapped out. Naturally, the diversification of flora and fauna also contributes to the emergence of new species of creatures—both the foul ones, like the Aspects of Rot, and the more charming ones, like the Wild Dragonflies.'
+    eternal_kingdom:
+        heading: 'About the Eternal Kingdom'
+        paragraph: 'In reality, no one is sure when it was actually founded, but one thing is certain—it will definitely never pass away. Ruled by kings chosen according to the voice of the people, it continues to prosper. Its technology is based on magical energy harvested through the secret techniques of royal scientists. Thanks to this, every citizen can enjoy, among other things, lighting in their homes. Rumor has it that the stolen relic is one of the machines responsible for converting this energy into power that supplies the entire kingdom. If these rumors prove true, it could significantly damage the perception of security within its borders.'
+    vagabonds:
+        heading: 'About the Vagabonds'
+        paragraph: 'To deeply understand and harness the chaotic nature of Talahm''s magic requires many years of practice. That is why members of the Vagabond Order, whose name derives from the traveling lifestyle of its brethren, begin their training from a very young age. Developing effective methods of handling such devastating power was not easy, but over time, significant progress was made in understanding it. Originally used to maintain peace, it was transformed into a martial art due to numerous conflicts with neighboring nations. The Vagabond Order evolved into royal special forces—during the war with the Kaata Empire, it played a key role in the infiltration and destabilization of the enemy. Currently, the doctrine of the order has changed. They still embark on expeditions, but these are most often linked to missions assigned by the King himself.'
+
+validators:
+    email:
+        already_used: 'This email address is already in use.'
+    patch_notes:
+        error:
+            title_empty: 'Title cannot be empty.'
+            content_empty: 'Content cannot be empty.'
+    form:
+        password:
+            required: 'Password is required.'
+        please:
+            appropriate:
+                image: 'Please upload a valid image file'

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title.update_list'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container page_wrapper">
+        <h1 class="page_title heading_primary">{{ 'heading.all_updates'|trans }}</h1>
+
+        {% if is_granted('PATCH_NOTES_CREATE') %}
+            <div class="action_bar_wrapper margin_vertical_4 margin_bottom_3">
+                <a href="{{ path('patch_notes_create') }}" class="button button_primary">
+                    {{ 'action.add_patch_note'|trans }}
+                </a>
+            </div>
+        {% endif %}
+
+        <div class="filter_wrapper margin_bottom_4 padding_3 background_light border_rounded">
+            <form action="{{ path('patch_notes_view') }}" method="GET" class="form_wrapper grid_layout align_end">
+                <div class="form_group_wrapper">
+                    <label for="search" class="form_label">{{ 'label.search_title_content'|trans }}</label>
+                    <input type="text" name="search" id="search" class="form_input" value="{{ filters.search }}" placeholder="{{ 'placeholder.type_keyword'|trans }}">
+                </div>
+
+                <div class="form_group_wrapper">
+                    <label for="sort" class="form_label">{{ 'label.sorting'|trans }}</label>
+                    <select name="sort" id="sort" class="form_select">
+                        <option value="DESC" class="select_option" {% if filters.sort == 'DESC' %}selected{% endif %}>{{ 'option.sort_desc'|trans }}</option>
+                        <option value="ASC" class="select_option" {% if filters.sort == 'ASC' %}selected{% endif %}>{{ 'option.sort_asc'|trans }}</option>
+                    </select>
+                </div>
+
+                <div class="action_buttons_wrapper">
+                    <button type="submit" class="button button_primary">{{ 'action.filter'|trans }}</button>
+                    <a href="{{ path('patch_notes_view') }}" class="button button_secondary">{{ 'action.clear_filters'|trans }}</a>
+                </div>
+            </form>
+        </div>
+
+        {% if notes is empty %}
+            <p class="text_paragraph">{{ 'message.no_available_updates'|trans }}</p>
+        {% else %}
+            <ul class="list_wrapper patch_notes_list">
+                {% for note in notes %}
+                    <li class="list_item patch_note_item">
+                        <h2 class="heading_secondary">
+                            {{ 'label.update'|trans }}: {{ note.id }} - {{ note.title|default('text.no_title'|trans) }}
+                        </h2>
+
+                        <p class="text_paragraph note_date text_muted">
+                            {{ 'label.added'|trans }}: {{ note.createdAt ? note.createdAt|date('d.m.Y H:i') : 'text.no_date'|trans }}
+                        </p>
+
+                        <div class="content_wrapper note_content">
+                            {{ note.content|default('text.no_content'|trans)|nl2br }}
+                        </div>
+
+                        {% if is_granted('PATCH_NOTES_DELETE', note) %}
+                            <div class="action_bar_wrapper text_end margin_top_3">
+                                <form action="{{ path('patch_notes_delete', {'id': note.id}) }}" method="post" class="form_wrapper inline_form" onsubmit="return confirm('{{ 'message.confirm_delete_entry'|trans }}');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ note.id) }}" class="hidden_input">
+                                    <button type="submit" class="button button_primary">
+                                        {{ 'action.delete_entry'|trans }}
+                                    </button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}
