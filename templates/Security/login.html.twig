@@ -13,7 +13,7 @@
                 </div>
             {% endif %}
 
-            <form method="post" action="{{ path('app_login') }}" class="form_wrapper">
+            <form method="post" action="{{ path('app_login') }}" class="form_wrapper" data-turbo="false">
                 <div class="form_group_wrapper">
                 <label for="inputEmail" class="form_label">{{ 'label.email'|trans }}</label>
                 <input type="email" id="inputEmail" name="_username" class="form_input" value="{{ last_username }}" required autofocus>
@@ -27,7 +27,7 @@
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" class="hidden_input">
 
                 <div class="action_buttons_wrapper margin_top_4">
-                    <button class="button button_primary" type="submit">{{ 'action.login'|trans }}</button>
+                    <button class="button button_primary" type="submit" >{{ 'action.login'|trans }}</button>
                 </div>
             </form>
         </div>

@@ -29,7 +29,7 @@ use Symfony\Component\HttpKernel\Attribute\MapQueryString;
 /**
  * Class ThreadController.
  */
-#[Route('/thread')]
+#[Route('/Thread')]
 class ThreadController extends AbstractController
 {
     /**
@@ -55,7 +55,7 @@ class ThreadController extends AbstractController
     {
         $pagination = $this->threadService->getPaginatedList($page, $filters);
 
-        return $this->render('thread/index.html.twig', [
+        return $this->render('Thread/index.html.twig', [
             'pagination' => $pagination,
             'filters' => $filters,
         ]);
@@ -91,7 +91,7 @@ class ThreadController extends AbstractController
             return $this->redirectToRoute('thread_view', ['id' => $thread->getId()]);
         }
 
-        return $this->render('thread/view.html.twig', [
+        return $this->render('Thread/view.html.twig', [
             'thread' => $thread,
             'comment_form' => $form->createView(),
         ]);
@@ -123,7 +123,7 @@ class ThreadController extends AbstractController
             return $this->redirectToRoute('thread_index');
         }
 
-        return $this->render('thread/create.html.twig', ['form' => $form->createView()]);
+        return $this->render('Thread/create.html.twig', ['form' => $form->createView()]);
     }
 
     /**
@@ -151,7 +151,7 @@ class ThreadController extends AbstractController
             return $this->redirectToRoute('thread_index');
         }
 
-        return $this->render('thread/edit.html.twig', [
+        return $this->render('Thread/edit.html.twig', [
             'form' => $form->createView(),
             'thread' => $thread,
         ]);

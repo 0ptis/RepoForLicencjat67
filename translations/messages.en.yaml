@@ -47,7 +47,7 @@ message:
     confirm_block_user: 'Are you sure you want to block this user?'
     no_users_found: 'No users found.'
     error_404: 'Page not found.'
-    error_403: 'Access denied.'
+    error_403: 'Stop! You have no power here.'
     error_generic: 'Our soliders have fallen in battle, sorry.'
 
 heading:
@@ -105,9 +105,9 @@ label:
     author: 'Author'
     created_at: 'Created at'
     actions: 'Actions'
-    create_new_user: 'Create New User'
+    create_new_user: 'Join the vagabond order'
     edit_profile: 'Edit Profile'
-    current_profile_picture: 'Current Profile Picture'
+    current_profile_picture: 'Your Profile Picture'
     change_password: 'Change Password'
     id: 'ID'
     status: 'Status'

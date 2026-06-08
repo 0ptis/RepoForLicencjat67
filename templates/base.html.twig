@@ -151,8 +151,9 @@
     </button>
 
     <div id="nav-items-wrapper" class="nav_items">
-        <a class="nav_item nav_button" href="{{ url('thread_index') }}">
-            {{ 'nav.item_threads'|trans }}
+
+        <a class="nav_item nav_button" href="{{ url('story_index') }}">
+            {{ 'nav.item_story'|trans }}
         </a>
 
         {% if is_granted('ROLE_USER') %}
@@ -161,8 +162,8 @@
             </a>
         {% endif %}
 
-        <a class="nav_item nav_button" href="{{ url('story_index') }}">
-            {{ 'nav.item_story'|trans }}
+        <a class="nav_item nav_button" href="{{ url('thread_index') }}">
+            {{ 'nav.item_threads'|trans }}
         </a>
 
         <a class="nav_item nav_button" href="{{ url('patch_notes_view') }}">
@@ -183,11 +184,11 @@
                 {{ 'nav.item_logout'|trans }}
             </a>
         {% else %}
-            <a class="nav_item nav_button" href="{{ url('app_login') }}">
-                {{ 'nav.item_login'|trans }}
-            </a>
             <a class="nav_item nav_button" href="{{ url('user_create') }}">
                 {{ 'nav.item_make_user'|trans }}
+            </a>
+            <a class="nav_item nav_button" href="{{ url('app_login') }}">
+                {{ 'nav.item_login'|trans }}
             </a>
         {% endif %}
 

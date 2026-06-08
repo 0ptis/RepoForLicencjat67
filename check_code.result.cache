@@ -1,0 +1,94 @@
+   1) src/Repository/ThreadRepository.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+   2) src/Repository/UserRepository.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, phpdoc_summary, phpdoc_trim)
+   3) src/Resolver/PatchNotesFiltersDtoResolver.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+   4) src/Resolver/ThreadListInputFiltersDtoResolver.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+   5) src/Resolver/UserListInputFiltersDtoResolver.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+   6) src/Security/Voter/CommentVoter.php (no_superfluous_phpdoc_tags, no_empty_phpdoc)
+   7) src/Security/Voter/PatchNotesVoter.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+   8) src/Security/Voter/ThreadVoter.php (no_superfluous_phpdoc_tags, no_empty_phpdoc)
+   9) src/Service/CommentService.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+  10) src/Service/CommentServiceInterface.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+  11) src/Controller/CommentController.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  12) src/Controller/ErrorController.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  13) src/Controller/GameController.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  14) src/Controller/HomeController.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  15) src/Controller/PatchNotesController.php (no_superfluous_phpdoc_tags, phpdoc_trim, phpdoc_trim_consecutive_blank_line_separation)
+  16) src/Controller/SecurityController.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  17) src/Controller/ThreadController.php (no_superfluous_phpdoc_tags, phpdoc_trim, no_unused_imports)
+  18) src/Controller/UserController.php (no_superfluous_phpdoc_tags, phpdoc_trim, return_type_declaration, blank_line_before_statement)
+  19) src/Controller/VagabondLoreController.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  20) src/DataFixtures/AbstractBaseFixtures.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, phpdoc_trim)
+  21) src/DataFixtures/CommentFixtures.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+  22) src/DataFixtures/PatchNotesFixtures.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  23) src/DataFixtures/ThreadFixtures.php (class_attributes_separation, no_superfluous_phpdoc_tags, phpdoc_trim)
+  24) src/DataFixtures/UserFixtures.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  25) src/Dto/PatchNotesFiltersDto.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  26) src/Dto/ThreadListInputFiltersDto.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  27) src/Dto/UserListInputFiltersDto.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  28) src/Entity/Comment.php (no_superfluous_phpdoc_tags, phpdoc_trim, phpdoc_trim_consecutive_blank_line_separation)
+  29) src/Entity/Enum/UserRole.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  30) src/Entity/PatchNotes.php (no_superfluous_phpdoc_tags, phpdoc_trim, phpdoc_trim_consecutive_blank_line_separation)
+  31) src/Entity/Thread.php (no_superfluous_phpdoc_tags, phpdoc_trim, phpdoc_trim_consecutive_blank_line_separation)
+  32) src/Entity/User.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  33) src/EventSubscriber/BlockedUserSubscriber.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, phpdoc_trim)
+  34) src/Form/Type/CommentType.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  35) src/Form/Type/PatchNotesType.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+  36) src/Form/Type/ThreadType.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+  37) src/Form/Type/UserType.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+  38) src/Repository/CommentRepository.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+  39) src/Repository/PatchNotesRepository.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+  40) src/Service/PatchNotesService.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+  41) src/Service/PatchNotesServiceInterface.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, blank_line_after_opening_tag, phpdoc_summary, blank_lines_before_namespace)
+  42) src/Service/ThreadService.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, phpdoc_trim)
+  43) src/Service/ThreadServiceInterface.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, phpdoc_trim)
+  44) src/Service/UserService.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, phpdoc_summary)
+  45) src/Service/UserServiceInterface.php (no_superfluous_phpdoc_tags, no_empty_phpdoc, phpdoc_summary)
+
+Found 45 of 46 files that can be fixed in 14.606 seconds, 92.00 MB memory used
+
+Fatal error: Uncaught Error: Class "PHP_CodeSniffer\Util\Timing" not found in /home/wwwroot/app/vendor/squizlabs/php_codesniffer/src/Runner.php on line 66
+
+Error: Class "PHP_CodeSniffer\Util\Timing" not found in /home/wwwroot/app/vendor/squizlabs/php_codesniffer/src/Runner.php on line 66
+
+Call Stack:
+    0.0010     485360   1. {main}() /home/wwwroot/app/vendor/bin/phpcs:0
+    0.0064     487432   2. include('/home/wwwroot/app/vendor/squizlabs/php_codesniffer/bin/phpcs') /home/wwwroot/app/vendor/bin/phpcs:119
+    0.1421    1844200   3. PHP_CodeSniffer\Runner->runPHPCS() /home/wwwroot/app/vendor/squizlabs/php_codesniffer/bin/phpcs:30
+
+ ----------- ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------ 
+  State       Domain       Id                                                                                                                                                                                                                                                                                                  Message Preview (en)                      
+ ----------- ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------ 
+   missing    validators   email.already_used                                                                                                                                                                                                                                                                                  email.already_used                        
+   missing    validators   patch_notes.error.title_empty                                                                                                                                                                                                                                                                       patch_notes.error.title_empty             
+   missing    validators   patch_notes.error.content_empty                                                                                                                                                                                                                                                                     patch_notes.error.content_empty           
+   missing    validators   form.please.appropriate.image                                                                                                                                                                                                                                                                       form.please.appropriate.image             
+   missing    validators   form.password.required                                                                                                                                                                                                                                                                              form.password.required                    
+   missing    messages     message.cannot_be_empty                                                                                                                                                                                                                                                                             message.cannot_be_empty                   
+   missing    messages     message.email_already_exists                                                                                                                                                                                                                                                                        message.email_already_exists              
+   missing    messages     Autorem niniejszego serwisu jest Filip Kwatera Serwis ten stanowi integralną część pracy licencjackiej (kierunek: elektroniczne przetwarzanie informacji), przygotowanej pod kierunkiem Dr Michaliny Lubaszewskiej na Wydziale Zarządzania i Komunikacji Społecznej Uniwersytetu Jagiellońskiego.   Autorem niniejszego serwisu jest Fili...  
+ ----------- ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------ 
+
+ ----------- ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------ ------------------------------------------ 
+  State       Domain       Id                                                                                                                                                                                                                                                                                                  Message Preview (pl)                       Fallback Message Preview (en)             
+ ----------- ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------ ------------------------------------------ 
+   missing    validators   email.already_used                                                                                                                                                                                                                                                                                  email.already_used                         email.already_used                        
+   missing    validators   patch_notes.error.title_empty                                                                                                                                                                                                                                                                       patch_notes.error.title_empty              patch_notes.error.title_empty             
+   missing    validators   patch_notes.error.content_empty                                                                                                                                                                                                                                                                     patch_notes.error.content_empty            patch_notes.error.content_empty           
+   missing    validators   form.please.appropriate.image                                                                                                                                                                                                                                                                       form.please.appropriate.image              form.please.appropriate.image             
+   missing    validators   form.password.required                                                                                                                                                                                                                                                                              form.password.required                     form.password.required                    
+   missing    messages     message.cannot_be_empty                                                                                                                                                                                                                                                                             message.cannot_be_empty                    message.cannot_be_empty                   
+   missing    messages     message.email_already_exists                                                                                                                                                                                                                                                                        message.email_already_exists               message.email_already_exists              
+   missing    messages     Autorem niniejszego serwisu jest Filip Kwatera Serwis ten stanowi integralną część pracy licencjackiej (kierunek: elektroniczne przetwarzanie informacji), przygotowanej pod kierunkiem Dr Michaliny Lubaszewskiej na Wydziale Zarządzania i Komunikacji Społecznej Uniwersytetu Jagiellońskiego.   Autorem niniejszego serwisu jest Fili...   Autorem niniejszego serwisu jest Fili...  
+ ----------- ------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------ ------------------------------------------ 
+
+[notice] Migrating up to DoctrineMigrations\Version20260517165451
+[notice] finished in 664.9ms, used 24M memory, 1 migrations executed, 8 sql queries
+
+ [OK] Successfully migrated to version: DoctrineMigrations\Version20260517165451                                        
+
+
+   > purging database
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PatchNotesFixtures
+   > loading App\DataFixtures\ThreadFixtures
+   > loading App\DataFixtures\CommentFixtures

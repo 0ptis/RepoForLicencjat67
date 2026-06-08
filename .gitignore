@@ -32,3 +32,9 @@ phpstan.neon
 /.phpcs-cache
 /phpcs.xml
 ###< squizlabs/php_codesniffer ###
+.idea
+var
+vendor
+.php_cs.cache
+.php-cs-fixer.cache
+.phpunit.result.cache

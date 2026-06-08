@@ -48,7 +48,7 @@ message:
     no_users_found: 'Nie znaleziono użytkowników.'
     error_generic: 'Wybacz, nasi wojownicy polegli w boju!'
     error_404: 'Strona nie została znaleziona.'
-    error_403: 'Dostęp zabroniony.'
+    error_403: 'Stój wstęp wzbroniony!'
 
 heading:
     updates: 'Aktualizacje'
@@ -62,7 +62,7 @@ heading:
     add_comment: 'Dodaj komentarz'
     access_denied: 'Brak dostępu'
     user_list: 'Lista użytkowników'
-    add_new_update: 'Dodaj nową aktualizację'
+    add_new_update: 'Nowa aktualizacja'
 
 action:
     add_patch_note: 'Dodaj aktualizację'
@@ -71,9 +71,9 @@ action:
     clear_filters: 'Wyczyść filtry'
     login: 'Zaloguj się'
     save: 'Zapisz'
-    back_to_list: 'Powrót do listy'
+    back_to_list: 'Powrót'
     yes_delete: 'Tak, usuń'
-    cancel_and_return: 'Anuluj i wróć'
+    cancel_and_return: 'Anuluj'
     update: 'Zaktualizuj'
     create_new_thread: 'Utwórz nowy wątek'
     search: 'Szukaj'
@@ -85,7 +85,7 @@ action:
     save_changes: 'Zapisz zmiany'
     cancel: 'Anuluj'
     add_comment: 'Dodaj komentarz'
-    back_to_thread_list: 'Powrót do listy wątków'
+    back_to_thread_list: 'Powrót'
     edit_thread: 'Edytuj wątek'
     logout: 'Wyloguj się'
     create: 'Utwórz'
@@ -94,7 +94,7 @@ action:
     block: 'Zablokuj'
 
 label:
-    search_title_content: 'Szukaj w tytule i treści'
+    search_title_content: 'Szukaj po tytule i treści'
     sorting: 'Sortowanie'
     update: 'Aktualizacja'
     added: 'Dodano'
@@ -105,9 +105,9 @@ label:
     author: 'Autor'
     created_at: 'Utworzono'
     actions: 'Akcje'
-    create_new_user: 'Utwórz nowego użytkownika'
+    create_new_user: 'Dołącz do zakonu włóczęgi!'
     edit_profile: 'Edytuj profil'
-    current_profile_picture: 'Obecne zdjęcie profilowe'
+    current_profile_picture: 'Twoje zdjęcie profilowe'
     change_password: 'Zmień hasło'
     id: 'ID'
     status: 'Status'
@@ -166,7 +166,7 @@ form:
         required: 'Hasło jest wymagane.'
     please:
         appropriate:
-            image: 'Proszę wgrać odpowiedni plik graficzny (maksymalnie 2MB).'
+            image: 'Wgraj odpowiedni plik'
 
 'Witaj!': 'Witaj!'
 
